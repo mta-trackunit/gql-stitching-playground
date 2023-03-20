@@ -20,3 +20,5 @@ export const getStarWarsSchemaConfig = async (): Promise<
   };
   return schemaConfig;
 };
+
+export default getStarWarsSchemaConfig;

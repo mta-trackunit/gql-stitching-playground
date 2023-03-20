@@ -16,3 +16,4 @@ export const getIceCreamSchemaConfig = async (): Promise<SubschemaConfig> => {
     },
   };
 };
+export default getIceCreamSchemaConfig;

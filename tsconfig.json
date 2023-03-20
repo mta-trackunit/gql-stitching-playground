@@ -11,7 +11,7 @@
 
       "target": "es2018",
       "module": "commonjs",
-      "lib": ["es2018", "esnext.asynciterable"],
+      "lib": ["es2018", "esnext.asynciterable", "dom"],
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
       "allowSyntheticDefaultImports": true

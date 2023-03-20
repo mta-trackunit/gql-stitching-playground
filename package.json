@@ -1,7 +1,8 @@
 {
   "name": "graphql-stitching",
   "scripts": {
-    "start": "ts-node ./src/server"
+    "start": "ts-node ./src/server",
+    "show": "ts-node ./src/utils/show-schema.ts @0"
   },
   "engines": {
     "node": ">=18.x"
