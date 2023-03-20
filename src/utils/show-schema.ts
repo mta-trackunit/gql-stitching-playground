@@ -2,11 +2,13 @@ import { printSchemaWithDirectives } from "@graphql-tools/utils";
 import { existsSync, mkdirSync, writeFileSync } from "fs";
 import { GraphQLSchema } from "graphql";
 import { introspectionFromSchema } from "graphql/utilities";
+import * as open from "open";
 import { join } from "path";
+
 import "reflect-metadata";
 
 export const showSubgraphSchema = (schema: GraphQLSchema, savePath: string) => {
-  const distDir = join(__dirname, "..", "dist");
+  const distDir = join(__dirname, "..", "..", "dist");
   if (!existsSync(distDir)) {
     mkdirSync(distDir);
   }
@@ -52,15 +54,19 @@ export const showSubgraphSchema = (schema: GraphQLSchema, savePath: string) => {
     printSchemaWithDirectives(schema)
   );
 
-  console.log(
-    `To show the subgraph click this: \n dist/${savePath}-schema.html`
+  ((open as any).default ? (open as any).default : open)(
+    `dist/${savePath}-schema.html`
   );
 };
 
-const document = {};
-
 (async () => {
-  const tsSchemaFolder = process.argv[3];
+  const tsSchemaFolder = process.argv[2];
+  if (!tsSchemaFolder) {
+    console.error(
+      "Please provide the folder for the subgraph to show like: \n npm run show starwars"
+    );
+    process.exit(1);
+  }
   const tsSchemaPath = join(__dirname, "..", tsSchemaFolder, "schema.ts");
   console.log(`Reading schema from file: ${tsSchemaPath}`);
 

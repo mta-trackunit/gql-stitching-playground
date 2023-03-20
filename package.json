@@ -2,7 +2,7 @@
   "name": "graphql-stitching",
   "scripts": {
     "start": "ts-node ./src/server",
-    "show": "ts-node ./src/utils/show-schema.ts @0"
+    "show": "ts-node ./src/utils/show-schema.ts"
   },
   "engines": {
     "node": ">=18.x"
@@ -18,6 +18,7 @@
     "graphql": "15.3.0",
     "graphql-yoga": "3.7.3",
     "node-fetch": "^2.6.9",
+    "open": "^8.4.2",
     "reflect-metadata": "0.1.13",
     "ts-node": "10.9.1",
     "type-graphql": "1.1.1"
