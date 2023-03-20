@@ -12,6 +12,15 @@ export const getPokemonSchemaConfig = async (): Promise<SubschemaConfig> => {
   const schemaConfig: SubschemaConfig = {
     schema,
     executor,
+    merge: {
+      Pokemon: {
+        fieldName: "pokemon",
+        selectionSet: "{ name }",
+        args: (originalObject: { name: string }) => ({
+          name: originalObject.name,
+        }),
+      },
+    },
   };
   return schemaConfig;
 };

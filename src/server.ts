@@ -5,6 +5,7 @@ import { stitchSchemas } from "@graphql-tools/stitch";
 import { createYoga } from "graphql-yoga";
 import { createServer } from "node:http";
 import { getIceCreamSchemaConfig } from "./icecream/schema";
+import getPokemonDeckSchemaConfig from "./pokemon-deck/schema";
 import { getPokemonSchemaConfig } from "./pokemon/schema";
 import { getStarWarsSchemaConfig } from "./starwars/schema";
 
@@ -13,12 +14,14 @@ import { getStarWarsSchemaConfig } from "./starwars/schema";
 
   const starwarsSchemaConfig = await getStarWarsSchemaConfig();
   const pokemonSchemaConfig = await getPokemonSchemaConfig();
+  const pokemonDeckSchemaConfig = await getPokemonDeckSchemaConfig();
 
   const gatewaySchema = stitchSchemas({
     subschemas: [
       starwarsSchemaConfig,
       iceCreamSchemaConfig,
       pokemonSchemaConfig,
+      pokemonDeckSchemaConfig,
     ],
   });
 
