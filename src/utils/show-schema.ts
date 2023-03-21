@@ -63,7 +63,7 @@ export const showSubgraphSchema = (schema: GraphQLSchema, savePath: string) => {
   const tsSchemaFolder = process.argv[2];
   if (!tsSchemaFolder) {
     console.error(
-      "Please provide the folder for the subgraph to show like: \n npm run show starwars"
+      "Please provide the folder for the subgraph to show like: \n npm run show supergraph \nor \n npm run show starwars \nor \n npm run show icecream"
     );
     process.exit(1);
   }
