@@ -3,11 +3,11 @@ import "reflect-metadata";
 
 import { createYoga } from "graphql-yoga";
 import { createServer } from "node:http";
-import getStitchedRouterSchema from "./router/schema";
+import { getSupergraphSchema } from "./supergraph/schema";
 
 (async () => {
   const yoga = createYoga({
-    schema: getStitchedRouterSchema(),
+    schema: getSupergraphSchema(),
   });
 
   const server = createServer(yoga);
