@@ -1,23 +1,13 @@
 // Typed-graphql needs this to be imported first
 import "reflect-metadata";
 
-import { stitchSchemas } from "@graphql-tools/stitch";
 import { createYoga } from "graphql-yoga";
 import { createServer } from "node:http";
-import { getIceCreamSchemaConfig } from "./icecream/schema";
-import { getStarWarsSchemaConfig } from "./starwars/schema";
+import getStitchedRouterSchema from "./router/schema";
 
 (async () => {
-  const iceCreamSchemaConfig = await getIceCreamSchemaConfig();
-
-  const starwarsSchemaConfig = await getStarWarsSchemaConfig();
-
-  const gatewaySchema = stitchSchemas({
-    subschemas: [starwarsSchemaConfig, iceCreamSchemaConfig],
-  });
-
   const yoga = createYoga({
-    schema: gatewaySchema,
+    schema: getStitchedRouterSchema(),
   });
 
   const server = createServer(yoga);
