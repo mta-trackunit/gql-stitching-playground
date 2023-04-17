@@ -15,6 +15,6 @@ export class Person {
   @Field((type) => ID)
   public id: string;
 
-  @Field((type) => [Pokemon], { nullable: true })
-  public pokemonDeck?: Pokemon[];
+  @Field((type) => Pokemon, { nullable: true })
+  public favoritePokemon?: Pokemon;
 }

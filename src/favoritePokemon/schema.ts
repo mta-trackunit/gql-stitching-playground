@@ -1,12 +1,12 @@
 import { SubschemaConfig } from "@graphql-tools/delegate";
 import { buildSchema } from "type-graphql";
-import { PokemonDeckResolver } from "./resolver";
+import { FavoritePokemonResolver } from "./resolver";
 
-export const getPokemonDeckSchemaConfig =
+export const getFavoritePokemonSchemaConfig =
   async (): Promise<SubschemaConfig> => {
     return {
       schema: await buildSchema({
-        resolvers: [PokemonDeckResolver],
+        resolvers: [FavoritePokemonResolver],
       }),
       merge: {
         Person: {
@@ -17,4 +17,4 @@ export const getPokemonDeckSchemaConfig =
       },
     };
   };
-export default getPokemonDeckSchemaConfig;
+export default getFavoritePokemonSchemaConfig;
