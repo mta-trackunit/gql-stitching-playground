@@ -11,7 +11,7 @@
     "node": "18.15.0"
   },
   "dependencies": {
-    "@graphql-tools/delegate": "^9.0.28",
+    "@graphql-tools/delegate": "^9.0.29",
     "@graphql-tools/load": "^7.8.13",
     "@graphql-tools/stitch": "^8.7.43",
     "class-validator": "0.14.0",
