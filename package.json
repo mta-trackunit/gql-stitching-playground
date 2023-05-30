@@ -17,7 +17,7 @@
     "class-validator": "0.14.0",
     "graphql": "15.3.0",
     "graphql-yoga": "3.7.3",
-    "node-fetch": "^2.6.9",
+    "node-fetch": "^2.6.10",
     "open": "^8.4.2",
     "reflect-metadata": "0.1.13",
     "ts-node": "10.9.1",
