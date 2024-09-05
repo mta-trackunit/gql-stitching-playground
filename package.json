@@ -16,7 +16,7 @@
     "@graphql-tools/stitch": "^8.7.43",
     "class-validator": "0.14.0",
     "graphql": "15.3.0",
-    "graphql-yoga": "3.7.3",
+    "graphql-yoga": "4.0.3",
     "node-fetch": "^2.6.9",
     "open": "^8.4.2",
     "reflect-metadata": "0.1.13",
